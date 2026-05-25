@@ -1,0 +1,13 @@
+{
+  "template": "ai-assisted-project-template",
+  "review": {
+    "mode": "local",
+    "defaultOutput": "tmp/claude-pr-review.md"
+  },
+  "hooks": {
+    "preImplementation": ".claude/hooks/pre-implementation-check.sh",
+    "prePr": ".claude/hooks/pre-pr-check.sh",
+    "protectedFiles": ".claude/hooks/protected-files-check.sh",
+    "docsConsistency": ".claude/hooks/docs-consistency-check.sh"
+  }
+}
