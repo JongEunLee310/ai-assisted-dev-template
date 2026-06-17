@@ -1,5 +1,8 @@
 # AI-Assisted Project Template
 
+> **Branch:** `fastapi` — FastAPI-specific variant with a minimal runnable FastAPI starter.
+> Common Harness Engineering files are included. See `main` branch for the framework-agnostic template.
+
 This repository is a reusable Harness Engineering based project template for teams that use Claude Code and Codex together.
 
 It is not an application project. It provides the workflow, documentation structure, agent role boundaries, PR feedback loop, and governance files that future application templates can build on.
@@ -40,3 +43,16 @@ Those rules depend on the target language and framework. React, FastAPI, Spring 
 3. Fill in `docs/knowledge/domain-knowledge.md`.
 4. Replace placeholder CI commands in `.github/workflows/ci.yml`.
 5. Configure branch protection and required checks in GitHub.
+
+## FastAPI Starter
+
+This branch includes a minimal runnable FastAPI application.
+
+### Verification
+
+```bash
+uv sync
+uv run ruff check .
+uv run mypy .
+uv run pytest
+```
