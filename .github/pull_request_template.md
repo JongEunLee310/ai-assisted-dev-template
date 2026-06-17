@@ -2,7 +2,7 @@
 
 ## Related Issue
 
-Closes:
+Closes #
 
 ## Agent Workflow
 
@@ -16,35 +16,67 @@ Closes:
 
 ## Handoff
 
-Link or paste the Codex handoff task:
+- Handoff task:
+- Scope changed from handoff?
+  - [ ] No
+  - [ ] Yes, explained below
+
+Scope change explanation:
+
+-
 
 ## Changes
 
-Describe the changes:
+-
 
 ## Verification
 
-Commands run:
+- [ ] Format
+- [ ] Lint
+- [ ] Typecheck
+- [ ] Test
+- [ ] Build
+- [ ] CI passed
 
 ## CI Feedback
 
-CI result and follow-up:
+- [ ] Passed on first run
+- [ ] Failed and fixed
+- [ ] Not applicable
+
+If CI failed, summarize failure and fix:
+
+-
 
 ## Local Claude Review
 
-Review record:
+- [ ] Not yet reviewed
+- [ ] Reviewed locally
+- [ ] Blocking issues resolved
+- [ ] Suggestions reviewed
+- [ ] Human decision needed
+
+Claude review summary:
+
+-
 
 ## Documentation Impact
 
-Docs changed or checked:
+- [ ] No document update needed
+- [ ] Updated Knowledge Base
+- [ ] Updated ADR
+- [ ] Updated Failure Record
+- [ ] Updated directory README
+- [ ] Documentation update deferred with reason
 
 ## Risk Check
 
-Risk level and reason:
+- [ ] No protected files changed
+- [ ] Protected files changed with explanation
 
-## Protected File Explanation
+Protected file explanation:
 
-Protected files changed, if any, and why:
+-
 
 ## Autonomy Check
 
