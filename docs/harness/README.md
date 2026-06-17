@@ -14,6 +14,8 @@ This directory defines the AI-assisted engineering harness used by this template
 - `skill-usage-policy.md`
 - `hook-policy.md`
 - `garbage-collection-policy.md`
+- `task-classification-policy.md`
+- `human-gate-policy.md`
 
 ## Writing Rules
 
