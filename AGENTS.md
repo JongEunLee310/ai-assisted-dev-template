@@ -28,4 +28,12 @@ Protected files are files that require explicit permission before modification. 
 
 ## Verification
 
-Use the verification commands listed in the issue, handoff task, or project README. If verification cannot be run, explain why and state the residual risk.
+Use the verification commands listed in the issue, handoff task, or project README.
+
+Default commands for this template:
+
+- `uv run ruff check .` — lint
+- `uv run mypy .` — type check
+- `uv run pytest` — tests
+
+If verification cannot be run, explain why and state the residual risk.

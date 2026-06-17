@@ -15,16 +15,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Project-specific setup
-        run: |
-          echo "Replace this step with project-specific setup."
-          echo "Examples: Node.js for React, Python for FastAPI, Java for Spring Boot."
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-      - name: Dependency installation
-        run: |
-          echo "Replace this step with dependency installation commands."
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
 
-      - name: Verification commands
-        run: |
-          echo "Replace this step with project-specific verification commands."
-          echo "Examples: tests, lint, typecheck, build, or framework checks."
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: Type check
+        run: uv run mypy .
+
+      - name: Test
+        run: uv run pytest

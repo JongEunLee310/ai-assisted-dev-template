@@ -10,6 +10,15 @@ Codex is the implementation agent for this template.
 - Fix CI failures.
 - Respond to Claude Code local review blocking issues.
 
+## Framework
+
+This template targets Python FastAPI projects managed with uv.
+
+- Use `uv run` for all Python commands.
+- Run `uv run ruff check .` for lint.
+- Run `uv run mypy .` for type checking.
+- Run `uv run pytest` for tests.
+
 ## Boundaries
 
 Codex must not:
