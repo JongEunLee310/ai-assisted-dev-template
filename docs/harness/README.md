@@ -16,6 +16,8 @@ This directory defines the AI-assisted engineering harness used by this template
 - `garbage-collection-policy.md`
 - `task-classification-policy.md`
 - `human-gate-policy.md`
+- `autonomy-levels.md`
+- `orchestration-state-policy.md`
 
 ## Writing Rules
 

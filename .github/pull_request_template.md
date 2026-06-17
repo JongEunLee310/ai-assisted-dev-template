@@ -45,3 +45,10 @@ Risk level and reason:
 ## Protected File Explanation
 
 Protected files changed, if any, and why:
+
+## Autonomy Check
+
+- [ ] Task risk level classified
+- [ ] Human gate not required
+- [ ] Human gate required and approved
+- [ ] Scope remained within approved autonomy level

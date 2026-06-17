@@ -8,23 +8,27 @@ on:
 
 jobs:
   verify:
-    name: Project Verification
+    name: Template Self-Check
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Project-specific setup
+      - name: Check required core files
         run: |
-          echo "Replace this step with project-specific setup."
-          echo "Examples: Node.js for React, Python for FastAPI, Java for Spring Boot."
+          test -f AGENTS.md
+          test -f CLAUDE.md
+          test -f .codex/instructions.md
+          test -f .github/pull_request_template.md
+          test -f docs/README.md
+          test -f docs/harness/README.md
+          test -f docs/knowledge/README.md
+          test -f docs/decisions/README.md
+          test -f docs/failures/README.md
+          test -f docs/feedback/README.md
+          test -f docs/archive/README.md
 
-      - name: Dependency installation
+      - name: Check hook script syntax
         run: |
-          echo "Replace this step with dependency installation commands."
-
-      - name: Verification commands
-        run: |
-          echo "Replace this step with project-specific verification commands."
-          echo "Examples: tests, lint, typecheck, build, or framework checks."
+          find .claude/hooks -name "*.sh" -print -exec bash -n {} \;
