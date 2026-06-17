@@ -15,16 +15,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Project-specific setup
-        run: |
-          echo "Replace this step with project-specific setup."
-          echo "Examples: Node.js for React, Python for FastAPI, Java for Spring Boot."
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "temurin"
+          cache: gradle
 
-      - name: Dependency installation
-        run: |
-          echo "Replace this step with dependency installation commands."
-
-      - name: Verification commands
-        run: |
-          echo "Replace this step with project-specific verification commands."
-          echo "Examples: tests, lint, typecheck, build, or framework checks."
+      - name: Build and verify
+        run: ./gradlew build

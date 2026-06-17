@@ -10,6 +10,14 @@ Codex is the implementation agent for this template.
 - Fix CI failures.
 - Respond to Claude Code local review blocking issues.
 
+## Framework
+
+This template targets Java Spring Boot projects managed with Gradle.
+
+- Run `./gradlew build` to build and run all tests.
+- Maven users can substitute `./mvnw verify`.
+- Java version: 21.
+
 ## Boundaries
 
 Codex must not:

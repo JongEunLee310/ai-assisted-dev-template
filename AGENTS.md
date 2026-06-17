@@ -28,4 +28,10 @@ Protected files are files that require explicit permission before modification. 
 
 ## Verification
 
-Use the verification commands listed in the issue, handoff task, or project README. If verification cannot be run, explain why and state the residual risk.
+Use the verification commands listed in the issue, handoff task, or project README.
+
+Default commands for this template:
+
+- `./gradlew build` — build and test (or `./mvnw verify` for Maven)
+
+If verification cannot be run, explain why and state the residual risk.
