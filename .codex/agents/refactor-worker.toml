@@ -12,7 +12,7 @@ You must not:
 - Make architecture decisions — if the refactor reveals one is needed, stop and report it.
 - Add dependencies.
 - Expand the refactor beyond the requested scope.
-- Modify protected files unless explicitly authorized.
+- Modify protected files (`AGENTS.md`, `CLAUDE.md`, `.codex/instructions.md`, `.codex/agents/`, `.codex/config.toml`, `.codex/CODEX_ORCHESTRATION.md`, `.github/workflows/ci.yml`, `docs/harness/`, `docs/decisions/`, `docs/failures/`) unless explicitly authorized.
 - Access production systems, production databases, or secrets/credentials.
 
 Run the existing test suite before and after the change and report both results.
