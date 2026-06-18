@@ -6,7 +6,7 @@ This document defines when a Codex session should spawn the custom agents define
 
 - Default to a single Codex session for most work.
 - Spawn a subagent only for complex work, parallel exploration, review separation, or test-failure analysis.
-- All subagents inherit the parent session's sandbox and approval policy.
+- Subagents must never exceed the parent session's sandbox and approval policy. A per-agent `sandbox_mode` may further restrict the agent (e.g. `test_debugger`'s `read-only`), but must not broaden the parent session's permissions.
 - Pass subagents a summary and task packet, not the full conversation — control token usage.
 - The parent Codex session (or Claude Code, on the final PR) makes the final call; subagents report findings, not decisions.
 - `max_depth = 1` in `.codex/config.toml` blocks subagents from spawning further subagents. See `.codex/CODEX_SETUP_NOTES.md` for whether this is confirmed to be enforced in the current Codex CLI version.
