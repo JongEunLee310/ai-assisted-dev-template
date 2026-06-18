@@ -21,6 +21,7 @@ Claude Code review is local by default. This template does not configure a Claud
 This branch includes a minimal runnable FastAPI application.
 
 `GET /health` returns `{"status": "ok"}`.
+`GET /version` returns `{"version": "0.1.0"}`.
 
 ### Verification
 
