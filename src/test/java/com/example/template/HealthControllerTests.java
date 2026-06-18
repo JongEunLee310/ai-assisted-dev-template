@@ -23,4 +23,11 @@ class HealthControllerTests {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.status").value("ok"));
     }
+
+    @Test
+    void versionReturnsProjectVersion() throws Exception {
+        mockMvc.perform(get("/version"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.version").value("0.1.0"));
+    }
 }

@@ -22,6 +22,7 @@ This branch includes a minimal runnable Spring Boot application.
 
 - Java 21, Spring Boot 3.5.0, Gradle wrapper
 - `GET /health` returns `{"status": "ok"}`
+- `GET /version` returns `{"version": "0.1.0"}`
 
 ### Verification
 
