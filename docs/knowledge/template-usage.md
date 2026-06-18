@@ -38,7 +38,7 @@ Claude Code reads the issue and relevant docs, then writes a handoff task using 
 
 ## 9. Codex Implements
 
-Codex implements only the handoff scope, updates tests, and runs local verification commands before opening a PR.
+The human operator starts Codex manually in a separate session (terminal, IDE integration, or an explicitly approved isolated environment), using Claude Code's handoff document as the brief. Claude Code does not invoke Codex CLI itself, and elevated-access flags (`--dangerously-bypass-approvals-and-sandbox`, `-s danger-full-access`) are never used to automate this step; see `docs/decisions/ADR-002-use-manual-codex-execution-instead-of-nested-codex-exec.md`. Codex implements only the handoff scope, updates tests, and runs local verification commands before opening a PR.
 
 ## 10. CI Feedback Is Handled
 

@@ -20,6 +20,8 @@ Claude Code plans, Codex implements, and CI verifies. Humans review PRs before m
 
 Use when: the task is Low or Medium risk, scope is clearly defined, and verification commands exist.
 
+Codex implementation at this level is still started manually by the human operator, in a separate session, using Claude Code's handoff document. Claude Code does not invoke Codex CLI itself; see `docs/harness/handoff-policy.md` and `docs/decisions/ADR-002-use-manual-codex-execution-instead-of-nested-codex-exec.md`.
+
 ## Default Level
 
 This template operates at Level 2 for Low and Medium risk tasks. High and Critical risk tasks require Level 1 (human gate before implementation begins).

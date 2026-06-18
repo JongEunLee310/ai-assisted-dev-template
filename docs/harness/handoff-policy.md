@@ -35,3 +35,9 @@ Claude Code should stop instead of handing off when:
 ## Handoff Quality
 
 A good handoff is narrow, testable, and explicit about what Codex must not change.
+
+## Codex Execution
+
+Claude Code must not spawn Codex CLI as a nested autonomous implementation agent (e.g., calling `codex exec` from its own Bash tool). Claude Code's responsibility ends at producing the handoff document. The human operator runs Codex manually in a separate session, using the handoff as the brief.
+
+`--dangerously-bypass-approvals-and-sandbox` and `-s danger-full-access` must never be used in an automated Claude Code workflow. If Codex's default sandbox cannot run a task, stop and ask the human per `docs/harness/human-gate-policy.md` instead of escalating Codex's privileges. See `docs/decisions/ADR-002-use-manual-codex-execution-instead-of-nested-codex-exec.md`.
