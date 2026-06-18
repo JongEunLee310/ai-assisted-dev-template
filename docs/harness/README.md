@@ -7,6 +7,7 @@ This directory defines the AI-assisted engineering harness used by this template
 ## Included Documents
 
 - `harness-engineering.md`
+- `branch-strategy.md`
 - `agent-role-policy.md`
 - `handoff-policy.md`
 - `local-review-policy.md`
