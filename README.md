@@ -1,47 +1,69 @@
-# AI-Assisted Dev Template
+# AI 개발 보조 템플릿
 
-> **Branch:** `main` — common Harness Engineering template. This branch is not an application starter.
-> Framework-specific variants live in other branches: `fastapi`, `spring-boot`.
+> **브랜치:** `main` — 공통 Harness Engineering 템플릿. 이 브랜치는 애플리케이션 스타터가 아니다.
+> 프레임워크별 변형은 다른 브랜치에 있다: `fastapi`, `spring-boot`.
 
-This repository provides reusable AI-assisted development workflow files for teams that use Claude Code and Codex together.
+이 저장소는 Claude Code와 Codex를 함께 사용하는 팀을 위한 재사용 가능한 AI 보조 개발 워크플로우 파일을 제공한다.
 
-It is not an application project. It does not contain application code, framework-specific configuration, or runnable services.
+애플리케이션 프로젝트가 아니다. 애플리케이션 코드, 프레임워크별 설정, 실행 가능한 서비스를 포함하지 않는다.
 
-## Core Model
+## 핵심 모델
 
-Claude Code and Codex have separated responsibilities.
+Claude Code와 Codex는 역할이 분리되어 있다.
 
-- **Claude Code** plans work, reviews design, creates Codex handoff tasks, reviews PRs locally, assesses documentation impact, and decides whether ADRs, failure records, or knowledge base updates are needed.
-- **Codex** implements from Claude Code handoff tasks, updates tests, runs local verification, fixes CI failures, and responds to blocking issues from Claude Code local review.
-- **GitHub Actions CI** acts as the feedback sensor in the PR workflow.
-- **Humans** own final approval, merge, and risky decisions.
+- **Claude Code** — 작업 계획 수립, 설계 검토, Codex 핸드오프 태스크 생성, 로컬 PR 리뷰, 문서화 영향 평가, ADR/실패 기록/지식베이스 업데이트 필요 여부 판단.
+- **Codex** — Claude Code 핸드오프 태스크 기반 구현, 테스트 업데이트, 로컬 검증 실행, CI 실패 수정, Claude Code 로컬 리뷰 블로킹 이슈 대응.
+- **GitHub Actions CI** — PR 워크플로우의 피드백 센서 역할.
+- **사람** — 최종 승인, merge, 위험 결정의 책임자.
 
-Claude Code review is local by default. This template does not configure a Claude GitHub Action. Anthropic API key is not required in CI. Local review records can be published to the PR conversation when appropriate.
+Claude Code 리뷰는 기본적으로 로컬에서 수행한다. 이 템플릿은 Claude GitHub Action을 설정하지 않는다. CI에 Anthropic API 키가 필요하지 않다. 적절한 경우 로컬 리뷰 기록을 PR 대화에 게시할 수 있다.
 
-## Included Practices
+## 에이전트 자율성
 
-This template includes:
+에이전트 행동 범위는 `docs/agent/autonomy-levels.md`에 정의된 레벨로 제어한다.
 
-- ADRs for durable architectural and workflow decisions.
-- Failure records for approaches that failed and should not be repeated blindly.
-- Knowledge base documents for workflow and project-specific domain knowledge.
-- Feedback loop records for PR, CI, and review learnings.
-- Garbage collection policies for removing stale AI workflow artifacts and documentation.
-- Directory README files to reduce documentation drift.
-- Protected-file and documentation consistency hook placeholders.
+- 기본 레벨은 **Level 1: Local Edit**이다.
+- 작업 문서에서 명시적으로 지정하지 않으면 에이전트는 커밋, push, PR 생성을 수행하지 않는다.
+- 레벨 상향은 작업 문서에서 명시적으로 지정해야 한다.
 
-## Intentional Exclusions
+## 포함된 관행
 
-Code drift and structure drift rules are intentionally excluded from this common template.
+이 템플릿은 다음을 포함한다:
 
-Those rules depend on the target language and framework. FastAPI, Spring Boot, and other project-specific templates should define their own linting, architecture checks, directory rules, and framework conventions.
+- 지속적인 아키텍처 및 워크플로우 결정을 위한 ADR.
+- 반복하지 말아야 할 접근 방식에 대한 실패 기록.
+- 워크플로우 및 프로젝트별 도메인 지식을 위한 지식베이스 문서.
+- PR, CI, 리뷰 학습을 위한 피드백 루프 기록.
+- 오래된 AI 워크플로우 아티팩트 및 문서 제거를 위한 가비지 컬렉션 정책.
+- 문서 드리프트 감소를 위한 디렉토리 README 파일.
+- 보호 파일 및 문서 일관성 훅 플레이스홀더.
+- 에이전트 자율성 레벨 정의 (`docs/agent/autonomy-levels.md`).
 
-External Claude Skills are not vendored in this repository. Install them manually from `everything-claude-code` or another source. See `docs/harness/skill-usage-policy.md`.
+## 의도적 제외 항목
 
-## How To Use
+코드 드리프트 및 구조 드리프트 규칙은 이 공통 템플릿에서 의도적으로 제외한다.
 
-1. Copy this template into a new project.
-2. Customize `AGENTS.md`, `CLAUDE.md`, and `.codex/instructions.md` for the target project.
-3. Fill in `docs/knowledge/domain-knowledge.md`.
-4. Replace CI in `.github/workflows/ci.yml` with project-specific verification commands.
-5. Configure branch protection and required checks in GitHub.
+해당 규칙은 대상 언어와 프레임워크에 따라 다르다. FastAPI, Spring Boot 등 프로젝트별 템플릿에서 자체 린팅, 아키텍처 검사, 디렉토리 규칙, 프레임워크 컨벤션을 정의해야 한다.
+
+외부 Claude Skills는 이 저장소에 포함되지 않는다. `everything-claude-code` 또는 다른 소스에서 수동으로 설치한다. `docs/harness/skill-usage-policy.md` 참고.
+
+## 사용 방법
+
+1. 이 템플릿을 새 프로젝트에 복사한다.
+2. 대상 프로젝트에 맞게 `AGENTS.md`, `CLAUDE.md`, `.codex/instructions.md`를 커스터마이즈한다.
+3. `docs/knowledge/domain-knowledge.md`를 작성한다.
+4. `.github/workflows/ci.yml`의 CI를 프로젝트별 검증 명령으로 교체한다.
+5. GitHub에서 브랜치 보호 및 필수 체크를 설정한다.
+
+## 디렉토리 구조
+
+```
+docs/
+  agent/          — 에이전트 자율성 및 행동 범위 정책
+  decisions/      — ADR (아키텍처 결정 기록)
+  failures/       — 실패 기록
+  feedback/       — 피드백 루프 기록
+  harness/        — Harness Engineering 핵심 정책
+  knowledge/      — 워크플로우 및 도메인 지식
+  archive/        — 보관된 문서
+```
