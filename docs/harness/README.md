@@ -9,6 +9,7 @@ This directory defines the AI-assisted engineering harness used by this template
 - `harness-engineering.md`
 - `branch-strategy.md`
 - `agent-role-policy.md`
+- `completion-commit-policy.md`
 - `handoff-policy.md`
 - `local-review-policy.md`
 - `feedback-loop-policy.md`
