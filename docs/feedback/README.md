@@ -8,6 +8,8 @@ This directory stores records of feedback loops from PRs, CI, local reviews, and
 
 - `loop-template.md`
 - `retrospective-template.md`
+- `dogfooding-plan.md`
+- `dogfooding-handoffs/`
 
 ## Writing Rules
 
