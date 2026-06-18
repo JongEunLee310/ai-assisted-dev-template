@@ -2,7 +2,7 @@
 
 ## Source Issue
 
-Link or identifier: (placeholder — create issue `feat: add version endpoint` on the `spring-boot` branch before opening this handoff)
+https://github.com/JongEunLee310/ai-assisted-dev-template/issues/12
 
 ## Task Summary
 
