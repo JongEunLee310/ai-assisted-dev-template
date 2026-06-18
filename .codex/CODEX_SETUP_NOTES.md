@@ -2,12 +2,14 @@
 
 Open items to confirm against the Codex CLI version actually in use, before relying on them in production workflows.
 
-## Unconfirmed config fields
+## Officially documented fields, local CLI verification pending
 
-- `sandbox_mode` in `.codex/agents/*.toml` — confirm the current Codex CLI version honors a per-agent sandbox mode, and that the allowed values (`read-only`, `workspace-write`) match what is set here.
-- `model_reasoning_effort` in `.codex/agents/*.toml` — confirm the current Codex CLI version supports this field and the allowed values (`low`, `medium`, `high`) used here.
-- `nickname_candidates` in `.codex/agents/*.toml` — cosmetic only; confirm it does not error out on unsupported versions before depending on it.
-- `[agents]` block in `.codex/config.toml` (`max_threads`, `max_depth`) — confirm the current Codex CLI version reads this table and that `max_depth = 1` actually blocks recursive subagent delegation as intended.
+The Codex documentation describes these fields as supported for project-scoped custom agents and global agent settings. They are not unconfirmed in the spec sense — what is still pending is verifying the *locally installed* Codex CLI version actually implements them as documented, since CLI behavior can lag or diverge from the docs.
+
+- `sandbox_mode` in `.codex/agents/*.toml` — documented values `read-only` / `workspace-write`. Verify the local CLI honors a per-agent sandbox mode as set here.
+- `model_reasoning_effort` in `.codex/agents/*.toml` — documented values `low` / `medium` / `high`. Verify the local CLI applies it per agent.
+- `nickname_candidates` in `.codex/agents/*.toml` — cosmetic. Verify it does not error out on the local CLI version before depending on it.
+- `[agents]` block in `.codex/config.toml` (`max_threads`, `max_depth`) — verify the local CLI reads this table and that `max_depth = 1` actually blocks recursive subagent delegation as intended.
 
 ## Why this matters
 
