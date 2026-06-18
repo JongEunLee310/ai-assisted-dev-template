@@ -35,3 +35,7 @@ Before implementation, Codex should have:
 - Documentation impact guidance.
 
 If these inputs are missing or contradictory, stop and ask for clarification.
+
+## Subagents
+
+For complex work, parallel exploration, or review separation, Codex may spawn the custom agents in `.codex/agents/` when explicitly asked. See `.codex/CODEX_ORCHESTRATION.md` for when to use each one, and `.codex/CODEX_TASK_PACKET_TEMPLATE.md` for the handoff format. Subagents inherit this file's boundaries; they do not relax them.
