@@ -37,3 +37,18 @@ Default commands for this template:
 - `uv run pytest` — tests
 
 If verification cannot be run, explain why and state the residual risk.
+
+## Codex Subagents
+
+Codex may spawn the custom agents defined in `.codex/agents/` (`codebase_explorer`, `feature_worker`, `bugfix_worker`, `test_debugger`, `refactor_worker`, `pr_reviewer`) only when explicitly asked to in the session prompt. See `.codex/CODEX_ORCHESTRATION.md` for when each one applies and `.codex/CODEX_TASK_PACKET_TEMPLATE.md` for the task packet format.
+
+## Done Definition
+
+A Codex task is done only when all of the following are reported, not just implied:
+
+- The requirement is met.
+- The list of changed files is stated.
+- The relevant test/verification commands were run, with results.
+- Any verification that could not be run is named, with the reason and residual risk.
+- Remaining risks are stated.
+- Whether documentation, an ADR, or a failure record needs updating is stated.
