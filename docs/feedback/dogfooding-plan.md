@@ -4,6 +4,10 @@
 
 Three small, low-risk tasks to exercise the full Claude Code + Codex workflow end to end on each branch before the template is used for real projects. These are drafts only. None of them should be implemented without explicit human approval to open the work.
 
+## Codex Execution Step
+
+Claude Code does not invoke Codex CLI directly (e.g., `codex exec`) as part of any of these tasks. After Claude Code creates the handoff, the human operator runs Codex manually in a separate session, using the handoff document as the brief. See `docs/failures/FAILURE-001-nested-codex-exec-sandbox-conflict.md` and `docs/decisions/ADR-002-use-manual-codex-execution-instead-of-nested-codex-exec.md`.
+
 ## Task 1: `main` — `docs: improve Human Gate glossary entry`
 
 **Goal:** Update `docs/knowledge/glossary.md` to clarify what Human Gate means in this template. The glossary currently has no "Human Gate" entry; one should be added that explains when a human approval step is required, referencing `docs/harness/human-gate-policy.md`.
@@ -26,7 +30,7 @@ Three small, low-risk tasks to exercise the full Claude Code + Codex workflow en
 **Expected flow:**
 
 1. Claude Code creates a Codex handoff task.
-2. Codex updates `app/main.py` and `tests/`.
+2. The human operator runs Codex manually in a separate session using the handoff; Codex updates `app/main.py` and `tests/`.
 3. CI runs `uv run ruff check .`, `uv run mypy .`, `uv run pytest`.
 4. Claude Code performs local PR review.
 
@@ -39,7 +43,7 @@ Three small, low-risk tasks to exercise the full Claude Code + Codex workflow en
 **Expected flow:**
 
 1. Claude Code creates a Codex handoff task.
-2. Codex updates the Spring Boot controller layer and `src/test/`.
+2. The human operator runs Codex manually in a separate session using the handoff; Codex updates the Spring Boot controller layer and `src/test/`.
 3. CI runs `./gradlew build`.
 4. Claude Code performs local PR review.
 

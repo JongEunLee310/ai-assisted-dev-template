@@ -14,6 +14,7 @@ Human approval is required before proceeding when any of the following condition
 - Abandoning an approach that requires a failure record.
 - Risk level assessed as High or Critical.
 - Security-relevant changes.
+- Running Codex (or any implementation agent) with elevated/bypassed sandbox access (e.g., `codex exec --dangerously-bypass-approvals-and-sandbox`, `-s danger-full-access`) because the default sandbox failed.
 
 ## Gate Points in the Workflow
 
@@ -35,6 +36,7 @@ The human decides whether to:
 - Proceed past a gate condition without documented human approval.
 - Self-approve a gated change by declaring it low-risk without justification.
 - Merge or push to main without human action.
+- Spawn another agent (e.g., Codex CLI) as a nested process with elevated sandbox or approval-bypass flags to work around a tool failure.
 
 ## Related
 
