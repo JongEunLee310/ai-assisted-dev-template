@@ -26,4 +26,8 @@ Used when Claude Code (or a human) hands implementation work to a Codex session,
 
 ## Risks
 
+## Rollback Plan
+
+Describe how to revert or disable this change if it causes problems.
+
 ## Notes for Codex Subagents
