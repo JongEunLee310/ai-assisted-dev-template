@@ -21,10 +21,17 @@ Protected files are files that require explicit permission before modification. 
 - `AGENTS.md`
 - `CLAUDE.md`
 - `.codex/instructions.md`
+- `.codex/agents/`
+- `.codex/config.toml`
+- `.codex/CODEX_ORCHESTRATION.md`
 - `.github/workflows/ci.yml`
 - `docs/harness/`
 - `docs/decisions/`
 - `docs/failures/`
+
+`.codex/agents/` and `.codex/config.toml` define what a Codex subagent is allowed to do and how deep delegation can go — a `feature_worker` or `bugfix_worker` changing its own permissions is a privilege-escalation risk, not a normal code change.
+
+`.codex/CODEX_SETUP_NOTES.md` and `.codex/CODEX_TASK_PACKET_TEMPLATE.md` are not protected files, but any change to them should be called out explicitly in the handoff, since they affect what behavior is expected from Codex subagents.
 
 ## Verification
 

@@ -39,9 +39,10 @@ Handling:
 Examples: a failing test, a reproducible runtime error, a CI failure with a log.
 
 Handling:
-1. `test_debugger` (or `bugfix_worker` if the cause is already known) to diagnose/fix.
-2. Re-run the relevant tests.
-3. `pr_reviewer` to self-review the diff.
+1. `test_debugger` to diagnose the root cause (read-only — it does not apply the fix).
+2. `bugfix_worker` to apply the minimal fix, if the cause is confirmed (skip `test_debugger` and go straight to `bugfix_worker` if the cause is already known).
+3. Re-run the relevant tests.
+4. `pr_reviewer` to self-review the diff.
 
 ### Level 5: Refactor
 
@@ -84,8 +85,8 @@ Do not change files outside the allowed scope.
 
 ```text
 Analyze the failing tests.
-Use test_debugger to inspect failure logs and identify root cause.
-Apply only minimal fixes.
+Use test_debugger to inspect failure logs and identify root cause (read-only).
+Use bugfix_worker to apply only the minimal fix once the cause is confirmed.
 Do not delete failing tests.
 Report commands run and remaining risks.
 ```
