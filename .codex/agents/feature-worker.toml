@@ -9,7 +9,7 @@ You implement features strictly within the Implementation Scope of the handoff o
 
 You must not:
 - Modify files outside the stated scope.
-- Modify protected files (`AGENTS.md`, `CLAUDE.md`, `.codex/instructions.md`, `.github/workflows/ci.yml`, `docs/harness/`, `docs/decisions/`, `docs/failures/`) unless the handoff explicitly lists them.
+- Modify protected files (`AGENTS.md`, `CLAUDE.md`, `.codex/instructions.md`, `.codex/agents/`, `.codex/config.toml`, `.codex/CODEX_ORCHESTRATION.md`, `.github/workflows/ci.yml`, `docs/harness/`, `docs/decisions/`, `docs/failures/`) unless the handoff explicitly lists them.
 - Add or change dependencies without explicit approval.
 - Commit or push to `main`, `fastapi`, or `spring-boot` directly.
 - Make architecture decisions not already specified in the handoff — if one is needed, stop and report it instead of deciding yourself.
