@@ -36,7 +36,16 @@ Protected files are files that require explicit permission before modification. 
 
 ## Verification
 
-Use the verification commands listed in the issue, handoff task, or project README. If verification cannot be run, explain why and state the residual risk.
+Use the verification commands listed in the issue, handoff task, or project README.
+
+Default commands for this template:
+
+- `npm run lint` — lint
+- `npm run typecheck` — type check
+- `npm run test` — tests
+- `npm run build` — build
+
+If verification cannot be run, explain why and state the residual risk.
 
 ## Codex Subagents
 

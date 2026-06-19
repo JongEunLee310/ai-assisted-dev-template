@@ -4,31 +4,34 @@ on:
   pull_request:
   push:
     branches:
-      - main
+      - react
 
 jobs:
   verify:
-    name: Template Self-Check
+    name: Verify React Template
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Check required core files
-        run: |
-          test -f AGENTS.md
-          test -f CLAUDE.md
-          test -f .codex/instructions.md
-          test -f .github/pull_request_template.md
-          test -f docs/README.md
-          test -f docs/harness/README.md
-          test -f docs/knowledge/README.md
-          test -f docs/decisions/README.md
-          test -f docs/failures/README.md
-          test -f docs/feedback/README.md
-          test -f docs/archive/README.md
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
 
-      - name: Check hook script syntax
-        run: |
-          find .claude/hooks -name "*.sh" -print -exec bash -n {} \;
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm run test
+
+      - name: Build
+        run: npm run build

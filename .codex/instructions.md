@@ -10,6 +10,16 @@ Codex is the implementation agent for this template.
 - Fix CI failures.
 - Respond to Claude Code local review blocking issues.
 
+## Framework
+
+This template targets React + Tailwind CSS projects built with Vite and managed with npm.
+
+- Use `npm` for dependency management (`npm ci` / `npm install`).
+- Run `npm run lint` for lint (ESLint).
+- Run `npm run typecheck` for type checking (`tsc --noEmit`).
+- Run `npm run test` for tests (Vitest).
+- Run `npm run build` for the production build (Vite).
+
 ## Boundaries
 
 Codex must not:
