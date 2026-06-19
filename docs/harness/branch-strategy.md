@@ -17,7 +17,7 @@ This template is distributed as three branches instead of three repositories. Th
 - `AGENTS.md`, `CLAUDE.md`, `.codex/`
 - `.github/pull_request_template.md`
 - `.claude/commands/`, `.claude/hooks/`
-- `docs/harness/`, `docs/knowledge/` (workflow and policy content), `docs/decisions/`, `docs/failures/`, `docs/feedback/`, `docs/archive/`
+- `docs/harness/`, `docs/knowledge/` (workflow and policy content), `docs/decisions/`, `docs/failures/`, `docs/designs/`, `docs/reviews/`, `docs/feedback/`, `docs/archive/`
 
 This layer should read the same across branches except for framework-specific wording in README files.
 
