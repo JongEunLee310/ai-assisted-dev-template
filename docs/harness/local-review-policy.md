@@ -20,11 +20,29 @@ Claude Code should review:
 
 ## Review Records
 
-The default temporary review record is:
+The review is written to a durable, versioned file:
 
-`tmp/claude-pr-review.md`
+`docs/reviews/pr-<number>.md`
 
-The default durable record location is the PR conversation. Reusable findings should be promoted into docs, ADRs, failure records, or the knowledge base.
+This file is committed, not a throwaway under `tmp/`. The PR conversation remains the place to publish the review for discussion, and reusable findings should still be promoted into docs, ADRs, failure records, or the knowledge base.
+
+## Review Format
+
+Every review record uses the same section order and headers:
+
+1. `## Review Summary`
+2. `## Blocking`
+3. `## Suggestions`
+4. `## Questions`
+5. `## CI Result`
+6. `## Documentation Impact`
+7. `## Final Recommendation`
+
+Use the fixed headers even when a section is empty (state "None").
+
+## Handling Review Feedback
+
+When Codex addresses review feedback, it does **not** open a new PR. It pushes the fix to the same feature branch, which updates the existing PR, and the follow-up is recorded as a new comment on the same PR. Do not fragment a single review cycle across multiple PRs.
 
 ## Approval
 

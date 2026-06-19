@@ -30,7 +30,7 @@ Claude Code reviews the PR locally after PR creation.
 
 ## 8. Review Record
 
-Record local review in `tmp/claude-pr-review.md` and publish to the PR conversation when useful.
+Record the local review in `docs/reviews/pr-<number>.md` using the fixed section format, and publish it to the PR conversation when useful. See `docs/harness/local-review-policy.md`.
 
 ## 9. Document Promotion
 
