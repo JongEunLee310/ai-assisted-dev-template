@@ -8,6 +8,7 @@ Claude Code is the orchestrator and reviewer for this template.
 - Produce implementation plans.
 - Review design options.
 - Create Codex handoff tasks.
+- Before handing off, confirm Codex will work on a dedicated feature branch based on the latest `main`; if the branch is behind, instruct a pull or rebase first.
 - Review PRs locally after PR creation.
 - Assess documentation impact.
 - Assess whether ADRs, failure records, or knowledge base updates are needed.

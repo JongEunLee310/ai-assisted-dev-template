@@ -50,12 +50,12 @@ After PR creation, Claude Code reviews the diff, related issue, handoff task, CI
 
 ## 12. Record Review Results in GitHub
 
-Publish the local review record with one of:
+Write the review to `docs/reviews/pr-<PR_NUMBER>.md`, then publish it with one of:
 
 ```bash
-gh pr comment <PR_NUMBER> --body-file tmp/claude-pr-review.md
-gh pr review <PR_NUMBER> --comment --body-file tmp/claude-pr-review.md
-gh pr review <PR_NUMBER> --request-changes --body-file tmp/claude-pr-review.md
+gh pr comment <PR_NUMBER> --body-file docs/reviews/pr-<PR_NUMBER>.md
+gh pr review <PR_NUMBER> --comment --body-file docs/reviews/pr-<PR_NUMBER>.md
+gh pr review <PR_NUMBER> --request-changes --body-file docs/reviews/pr-<PR_NUMBER>.md
 ```
 
 Claude Code does not approve PRs. Humans own final approval and merge.
