@@ -28,6 +28,8 @@ If a single unit of work mixes unrelated commit types (e.g., a doc update bundle
 
 - `main`, `fastapi`, and `spring-boot` are protected: direct push is rejected by repository rules. Push to a feature branch (e.g., `docs/<topic>`, `feat/<topic>`, `fix/<topic>`) and open a PR with `gh pr create` targeting the correct base branch.
 - PR body should summarize what changed and reference the source issue or handoff task if one exists.
+- **Closing keyword is required.** For every issue the PR resolves, include a `Closes #N` line in the PR body. Multiple issues use one `Closes #N` per line.
+- **PR Summary issue grouping.** Group summary bullets by issue. A single-issue PR omits per-bullet issue tags (the title already carries the issue number); a multi-issue PR groups bullets under a bold per-issue header.
 - Claude Code does not approve or merge the PR it opens. Human approval is still required per `local-review-policy.md`.
 
 ## Step 4: CI Failure Response
