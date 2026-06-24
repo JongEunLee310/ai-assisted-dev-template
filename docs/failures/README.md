@@ -7,6 +7,7 @@ This directory stores failure records for approaches that should not be repeated
 ## Included Documents
 
 - `FAILURE-000-template.md`
+- `FAILURE-001-nested-codex-exec-sandbox-conflict.md`
 
 ## Writing Rules
 
