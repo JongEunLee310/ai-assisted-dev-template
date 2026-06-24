@@ -69,6 +69,30 @@ FastAPI 특화 드리프트 규칙은 프로젝트별로 추가해야 한다.
 4. `.github/workflows/ci.yml`의 CI를 프로젝트별 검증 명령으로 교체하거나 확장한다.
 5. GitHub에서 브랜치 보호 및 필수 체크를 설정한다.
 
+## 적용 프로젝트에 맞게 문서 정리
+
+`docs/`에는 재사용 가능한 하니스 골격과, 이 템플릿 자체를 만들고 도그푸딩하며 남긴 기록이 섞여 있다. 실제 프로젝트에 적용할 때는 **적용 프로젝트와 무관한 템플릿 기록을 삭제하고** 골격만 남긴다.
+
+**유지 (재사용 골격)**
+
+- `docs/harness/` — Harness Engineering 핵심 정책 전체.
+- `docs/decisions/ADR-000-template.md`, `docs/failures/FAILURE-000-template.md` — ADR·실패 기록 템플릿.
+- `docs/decisions/ADR-001-separate-claude-code-and-codex-roles.md` — 역할 분리 등 워크플로우 거버넌스 ADR.
+- `docs/feedback/loop-template.md`, `docs/feedback/retrospective-template.md`, `docs/dogfooding/001-rollback-plan-template.md` — 빈 템플릿.
+- `docs/knowledge/workflow.md`, `docs/knowledge/glossary.md` — 워크플로우·용어집.
+- 각 디렉토리의 `README.md`.
+
+**비우고 채움**
+
+- `docs/knowledge/domain-knowledge.md` — 적용 프로젝트의 도메인 규칙으로 교체.
+
+**삭제 (이 템플릿 자체 기록)**
+
+- `docs/feedback/dogfooding-plan.md`, `docs/feedback/dogfooding-handoffs/`, `docs/feedback/dogfooding-*-version-endpoint.md` — 도그푸딩 계획·핸드오프·실행 기록.
+- `docs/decisions/ADR-002-*`, `docs/decisions/ADR-003-*`, `docs/failures/FAILURE-001-*` — 이 템플릿의 `codex exec` 운영 결정·실패 기록 (적용 프로젝트에서 동일 결정을 유지하면 남겨도 무방).
+- `docs/knowledge/template-usage.md` — 이 템플릿 사용법 문서.
+- `docs/archive/`, `docs/designs/`, `docs/reviews/` — 템플릿 작업 중 누적된 보관·설계·리뷰 기록.
+
 ## 디렉토리 구조
 
 ```
