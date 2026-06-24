@@ -91,7 +91,7 @@ Spring Boot 특화 드리프트 규칙은 프로젝트별로 추가해야 한다
 - `docs/feedback/dogfooding-plan.md`, `docs/feedback/dogfooding-handoffs/`, `docs/feedback/dogfooding-*-version-endpoint.md` — 도그푸딩 계획·핸드오프·실행 기록.
 - `docs/decisions/ADR-002-*`, `docs/decisions/ADR-003-*`, `docs/failures/FAILURE-001-*` — 이 템플릿의 `codex exec` 운영 결정·실패 기록 (적용 프로젝트에서 동일 결정을 유지하면 남겨도 무방).
 - `docs/knowledge/template-usage.md` — 이 템플릿 사용법 문서.
-- `docs/archive/`, `docs/designs/`, `docs/reviews/`, `docs/superpowers/` — 템플릿 작업 중 누적된 보관·설계·리뷰·계획 기록.
+- `docs/archive/`, `docs/designs/`, `docs/reviews/` — 템플릿 작업 중 누적된 보관·설계·리뷰 기록.
 
 ## 디렉토리 구조
 
