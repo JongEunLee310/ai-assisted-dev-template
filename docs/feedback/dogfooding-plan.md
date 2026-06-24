@@ -4,6 +4,10 @@
 
 Three small, low-risk tasks to exercise the full Claude Code + Codex workflow end to end on each branch before the template is used for real projects. These are drafts only. None of them should be implemented without explicit human approval to open the work.
 
+## Codex Execution Step
+
+After Claude Code creates the handoff, it triggers implementation by invoking `codex exec` automatically under the default sandbox (`read-only` / `workspace-write`), using the handoff document as the brief. Bypass/danger sandbox flags are never used; if the default sandbox cannot run a task, Claude Code falls back to manual execution or asks the human. See `docs/decisions/ADR-003-allow-claude-code-to-invoke-codex-exec.md` (which supersedes ADR-002) and `docs/failures/FAILURE-001-nested-codex-exec-sandbox-conflict.md`.
+
 ## Task 1: `main` — `docs: improve Human Gate glossary entry`
 
 **Goal:** Update `docs/knowledge/glossary.md` to clarify what Human Gate means in this template. The glossary currently has no "Human Gate" entry; one should be added that explains when a human approval step is required, referencing `docs/harness/human-gate-policy.md`.
@@ -26,7 +30,7 @@ Three small, low-risk tasks to exercise the full Claude Code + Codex workflow en
 **Expected flow:**
 
 1. Claude Code creates a Codex handoff task.
-2. Codex updates `app/main.py` and `tests/`.
+2. Claude Code triggers Codex via `codex exec` under the default sandbox using the handoff; Codex updates `app/main.py` and `tests/`.
 3. CI runs `uv run ruff check .`, `uv run mypy .`, `uv run pytest`.
 4. Claude Code performs local PR review.
 
@@ -39,7 +43,7 @@ Three small, low-risk tasks to exercise the full Claude Code + Codex workflow en
 **Expected flow:**
 
 1. Claude Code creates a Codex handoff task.
-2. Codex updates the Spring Boot controller layer and `src/test/`.
+2. Claude Code triggers Codex via `codex exec` under the default sandbox using the handoff; Codex updates the Spring Boot controller layer and `src/test/`.
 3. CI runs `./gradlew build`.
 4. Claude Code performs local PR review.
 
