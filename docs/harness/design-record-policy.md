@@ -37,8 +37,13 @@ Do not include SQL, query bodies, migrations, or business-logic code. If a detai
 
 The design record is written before the Codex handoff and referenced from the handoff task, so Codex implements against an agreed shape.
 
+설계 문서의 데이터 계약 리터럴(enum 값·필드 형식·경계값·키 스킴)에는 출처를 명시하고,
+출처를 댈 수 없는 값은 "가정"으로 표기한다. 상세는 `quality-process-policy.md`의 Design
+Fact Grounding을 따른다.
+
 ## Related
 
 - `handoff-policy.md` — design records are an input to the handoff.
+- `quality-process-policy.md` — 리터럴 계약의 출처 명시와 셀프 검토 체크포인트.
 - `docs/decisions/` — ADRs capture *why* a durable decision was made; design records capture *what shape* a specific change takes.
 - `docs/designs/README.md` — directory conventions and skeleton template.
