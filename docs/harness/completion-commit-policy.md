@@ -27,6 +27,7 @@ If a single unit of work mixes unrelated commit types (e.g., a doc update bundle
 ## Step 3: Push and Open a PR
 
 - `main`, `fastapi`, and `spring-boot` are protected: direct push is rejected by repository rules. Push to a feature branch (e.g., `docs/<topic>`, `feat/<topic>`, `fix/<topic>`) and open a PR with `gh pr create` targeting the correct base branch.
+- **Be careful with the base branch when stacking PRs.** If a PR's base is an intermediate feature branch rather than the intended long-lived branch, it merges into that intermediate branch and its changes may never reach the long-lived branch. Set each PR's base to the intended long-lived branch, or retarget a follow-up PR's base once the preceding PR has merged.
 - **Labels are required.** Attach labels at creation with `gh pr create --label`. Inherit the labels of the issue(s) the PR resolves; if there is no source issue, label by area and change type (at minimum the commit type, e.g., `docs`).
 - PR body should summarize what changed and reference the source issue or handoff task if one exists.
 - **Closing keyword is required.** For every issue the PR resolves, include a `Closes #N` line in the PR body. Multiple issues use one `Closes #N` per line.
