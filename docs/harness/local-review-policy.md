@@ -28,6 +28,10 @@ This file is committed, not a throwaway under `tmp/`. The PR conversation remain
 
 ## Review Format
 
+리뷰 기록은 `local-review-template.md`의 골격을 그대로 사용해 작성한다. 템플릿은 아래 고정
+7섹션을 실제 문서 형태로 구체화하고, 제목 줄 형식·발견 사항 표기·섹션별 서술 관례까지
+정의한다. 임의로 섹션을 간소화하거나 자체 형식을 만들지 않는다.
+
 Every review record uses the same section order and headers:
 
 1. `## Review Summary`
